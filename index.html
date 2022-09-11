@@ -1,7 +1,8 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="assets/css/main.css" rel="stylesheet" />
+        <link href="assets/main.css" rel="stylesheet" />
+        <script src="assets/main.js" type="text/javascript"></script>
         <title>Shivansh Anand - Software Engineer</title>
     </head>
     <body>
@@ -9,22 +10,38 @@
 
             <main>
 
-                <div id="home">
+                <div id="home" class="view-visible">
                     <h1>shivansh anand</h1>
                     <p>Passionate software engineer who loves to make things. Currently making eCommerce websites in Dentsu. Previously worked as a backend engineering intern at MakeMyTrip.</p>
+                </div>
+
+                <div id="skills" class="view-invisible">
+                    <p>skills</p>
+                </div>
+
+                <div id="work" class="view-invisible">
+                    <p>work</p>
+                </div>
+
+                <div id="resume" class="view-invisible">
+                    <h1>resume</h1>
+                    <p>You can view my resume <a href="assets/resume.pdf" target="_blank">here.</a></p>
                 </div>
 
             </main>
 
             <nav>
+                <label class="selected">Currently Selected</label>
                 <ul>
-                    <li><a href="#" class="selected">Home</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Work</a></li>
+                    <li><label class="selected">Home</label></li>
+                    <li><label>Skills</label></li>
+                    <li><label>Work</label></li>
+                    <li><label>Resume</label></li>
                     <li><a href="mailto: mranand@zohomail.in">Email</a></li>
                     <li><a href="https://github.com/mranand4" target="_blank">Github</a></li>
                     <li><a href="https://in.linkedin.com/in/shivansh-anand-280865185" target="_blank">LinkedIN</a></li>
                 </ul>
+                <label>Menu</label>
             </nav>
 
         </header>
