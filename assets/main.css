@@ -112,12 +112,6 @@ a {
     cursor: pointer; 
 }
 
-a:hover {
-    text-decoration: dotted;
-    text-decoration-line: underline;
-    text-underline-offset: 6px;   
-}
-
 
 nav {
     border-top: 1px solid lightgray;
@@ -166,3 +160,31 @@ nav label.selected {
     display: none;
 }
 
+#mobile-menu-container {
+    background-color: rgba(0,0,0,0.4);
+    z-index: 9;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+#mobile-menu-container ul {
+    background-color: rgb(253,253,253);
+    padding: 24px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    box-shadow: 0 -3px 6px -6px #333;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+#mobile-menu-container li {
+    margin: 12px 0;
+}

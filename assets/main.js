@@ -23,6 +23,18 @@ function initViewSwitch() {
 
 }
 
+function initMobileMenu() {
+
+    let menuBtn = document.querySelector("nav > label:last-child");
+    let mobileMenuContainer = document.querySelector("#mobile-menu-container");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenuContainer.setAttribute("class", "view-visible");
+    });
+
+}
+
 window.onload = () => {
     initViewSwitch();
+    initMobileMenu();
 }
