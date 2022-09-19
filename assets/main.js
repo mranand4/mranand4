@@ -1,5 +1,13 @@
 let lastVisibleViewId = "home";
 let lastSelectedMenuItem = ""
+let navbarHeight = 0;
+
+function initNavbarHeight() {
+
+    navbarHeight = document.querySelector("header > nav").offsetHeight;
+    console.log(navbarHeight);
+
+}
 
 function initViewSwitch() {
 
@@ -37,4 +45,5 @@ function initMobileMenu() {
 window.onload = () => {
     initViewSwitch();
     initMobileMenu();
+    initNavbarHeight();
 }
