@@ -16,16 +16,23 @@ function initViewSwitch() {
 
     for(let i of links)
         i.addEventListener("click", (e) => {
-            let id = e.target.innerText.toLowerCase();
 
-            lastSelectedMenuItem.className = "";
-            document.getElementById(lastVisibleViewId).className = "view-invisible";
+            document.getElementById(lastVisibleViewId).style.opacity = 0;
 
-            document.getElementById(id).className = "view-visible";
-            e.target.className = "selected";
+            setTimeout(() => {
+                document.getElementById(lastVisibleViewId).style.opacity = 1;
 
-            lastVisibleViewId = id;
-            lastSelectedMenuItem = e.target;
+                let id = e.target.innerText.toLowerCase();
+
+                lastSelectedMenuItem.className = "";
+                document.getElementById(lastVisibleViewId).className = "view-invisible";
+    
+                document.getElementById(id).className = "view-visible";
+                e.target.className = "selected";
+    
+                lastVisibleViewId = id;
+                lastSelectedMenuItem = e.target;
+            }, 250);
 
         });
 

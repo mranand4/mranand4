@@ -99,6 +99,10 @@ main::-webkit-scrollbar {
     display: none;
 }
 
+main > div {
+    transition: all 250ms ease-out;
+}
+
 #home h1, #resume h1 {
     font-family: gr;
     margin: 0;
