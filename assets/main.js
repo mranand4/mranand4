@@ -47,9 +47,18 @@ function initMobileMenu() {
 
     let menuBtn = document.querySelector("nav > label:last-child");
     let mobileMenuContainer = document.querySelector("#mobile-menu-container");
+    let mobileMenu = mobileMenuContainer.querySelector("ul");
 
     menuBtn.addEventListener("click", () => {
+        mobileMenuContainer.style.opacity = 0;
+        // mobileMenu.style.opacity = 0;
         mobileMenuContainer.setAttribute("class", "view-visible");
+        setTimeout(() => {
+            mobileMenuContainer.style.opacity = 1;
+            setTimeout(() => {
+                mobileMenu.style.bottom = 0;
+            }, 500);
+        }), 250;
     });
 
 }
