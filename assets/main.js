@@ -1,13 +1,5 @@
 let lastVisibleViewId = "home";
 let lastSelectedMenuItem;
-let navbarHeight = 0;
-
-function initNavbarHeight() {
-
-    navbarHeight = document.querySelector("header > nav").offsetHeight;
-    console.log(navbarHeight);
-
-}
 
 function initViewSwitch() {
 
@@ -18,7 +10,7 @@ function initViewSwitch() {
         i.addEventListener("click", (e) => {
 
             let id = e.target.innerText.toLowerCase().trim();
-            console.log(id);
+            document.querySelector("nav > label:first-child").innerText = e.target.innerText.trim();
             document.getElementById(lastVisibleViewId).style.opacity = 0;
             document.getElementById(id).style.opacity = 0;
 
@@ -76,5 +68,4 @@ function initMobileMenu() {
 window.onload = () => {
     initViewSwitch();
     initMobileMenu();
-    initNavbarHeight();
 }
