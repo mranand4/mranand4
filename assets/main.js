@@ -65,6 +65,14 @@ function initMobileMenu() {
 
 }
 
+function setTheme(name) {
+    let theme = {
+        dark : "dark-theme",
+        light : "light-theme"
+    }
+    document.querySelector("body").className = theme[name];
+}
+
 window.onload = () => {
     initViewSwitch();
     initMobileMenu();
