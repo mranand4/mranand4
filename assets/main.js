@@ -1,5 +1,5 @@
 let lastVisibleViewId = "home";
-let lastSelectedMenuItem = ""
+let lastSelectedMenuItem;
 let navbarHeight = 0;
 
 function initNavbarHeight() {
@@ -17,21 +17,26 @@ function initViewSwitch() {
     for(let i of links)
         i.addEventListener("click", (e) => {
 
+            let id = e.target.innerText.toLowerCase();
             document.getElementById(lastVisibleViewId).style.opacity = 0;
+            document.getElementById(id).style.opacity = 0;
 
             setTimeout(() => {
-                document.getElementById(lastVisibleViewId).style.opacity = 1;
-
-                let id = e.target.innerText.toLowerCase();
-
+                
                 lastSelectedMenuItem.className = "";
                 document.getElementById(lastVisibleViewId).className = "view-invisible";
-    
+                    
                 document.getElementById(id).className = "view-visible";
-                e.target.className = "selected";
-    
+                e.target.className = "selected";   
                 lastVisibleViewId = id;
                 lastSelectedMenuItem = e.target;
+
+
+                setTimeout(() => {
+                    document.getElementById(id).style.opacity = 1; 
+                }, 250);
+                    
+
             }, 250);
 
         });
