@@ -8,7 +8,7 @@
 /*small phones like iPhone 5 */
 @media only screen and (max-width: 600px) {
 
-    #home h1, #resume h1 {
+    main > div h1 {
         font-size: 42px;
     }
 
@@ -29,7 +29,7 @@
 
 /* large phones and tablets */
 @media only screen and (min-width: 600px) {
-    #home h1, #resume h1 {
+    main > div h1 {
         font-size: 72px;
     }
 
@@ -49,7 +49,7 @@
 
 /* computers and other large displays */
 @media only screen and (min-width: 992px) {
-    #home h1, #resume h1 {
+    main > div h1 {
         font-size: 96px;
     }
 
@@ -104,7 +104,7 @@ main > div {
     transition: all 250ms ease-out;
 }
 
-#home h1, #resume h1 {
+main > div h1 {
     font-family: gr;
     margin: 0;
 }
@@ -173,14 +173,14 @@ nav label.selected {
     height: 100vh;
     top: 0;
     left: 0;
-    transition: all 250ms ease;
+    transition: all 100ms ease;
 }
 
 #mobile-menu-container ul {
     background-color: rgb(253,253,253);
     padding: 24px;
     position: absolute;
-    bottom: -1000px;
+    bottom: -800px;
     left: 0;
     width: 100%;
     box-sizing: border-box;
@@ -189,7 +189,7 @@ nav label.selected {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     list-style: none;
-    transition: all 500ms ease;
+    transition: all 400ms ease;
 }
 
 #mobile-menu-container li {
