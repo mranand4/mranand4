@@ -1,3 +1,9 @@
+const THEME = {
+    dark : "dark-theme",
+    light : "light-theme",
+    retro : "retro-theme"
+}
+
 let lastVisibleViewId = "home";
 let lastSelectedMenuItem;
 
@@ -65,13 +71,7 @@ function initMobileMenu() {
 
 }
 
-function setTheme(name) {
-    let theme = {
-        dark : "dark-theme",
-        light : "light-theme"
-    }
-    document.querySelector("body").className = theme[name];
-}
+let setTheme = (name) => {document.querySelector("body").className = THEME[name];}
 
 window.onload = () => {
     initViewSwitch();
