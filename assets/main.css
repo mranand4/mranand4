@@ -393,6 +393,7 @@ nav label.selected {
 .project-container li {
     display: inline-block;
     margin-right: 8px;
+    margin-bottom: 6px;
     padding: 4px 8px;
     background-color: var(--color-card-labelbg);
     color: var(--color-text-primary);
@@ -403,6 +404,7 @@ nav label.selected {
 .project-container a {
     display: inline-block;
     margin-right: 8px;
+    margin-bottom: 6px;
     background-color: var(--color-card-linkbg);
     padding: 4px 8px;
     color: var(--color-text-primary);

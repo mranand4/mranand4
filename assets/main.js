@@ -129,7 +129,7 @@ function initMobileMenu() {
 
 function initWorkView() {
 
-    let w1 = new Project("Project 1", "some description", ["Java", "JSP"], "https://hello.com", "https://c.com", "https://picsum.photos/256/128");
+    let w1 = new Project("Weather App", "Handy weather app. People can see current weather, daily and weekly forecast of any given place. Locations can be saved (or marked as home for quick glance). Dark theme and light theme. Search autocomplete. Temperature conversion.", ["ReactJS", "ExpressJS", "Rest API", "Heroku"], "https://simple-weather-4.herokuapp.com/", "https://github.com/mranand4/reactjs-expressjs-weather-app", "assets/media/weather_app.gif");
     let p = getProjectItem(w1);
     document.querySelector("#work > div").appendChild(p);
     document.querySelector("#work > div").appendChild(getProjectItem(w1));
