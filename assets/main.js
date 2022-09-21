@@ -7,6 +7,62 @@ const THEME = {
 let lastVisibleViewId = "home";
 let lastSelectedMenuItem;
 
+function Project(title, description, techStack, liveLink, srcCodeLink, media) {
+    this.title = title;
+    this.description = description;
+    this.techStack = techStack;
+    this.liveLink = liveLink;
+    this.srcCodeLink = srcCodeLink;
+    this.media = media;
+}
+
+function getProjectItem(project) {
+
+    let container = document.createElement("div");
+    let leftContainer = document.createElement("section");
+    let rightContainer = document.createElement("section");
+    let media = document.createElement("img");
+    let title = document.createElement("h2");
+    let description = document.createElement("p");
+    let srcCodeBtn = document.createElement("a");
+    let liveLinkBtn = document.createElement("a");
+    let techStackContainer = document.createElement("ul");
+
+    container.className = "project-container";
+
+    media.setAttribute("src", project.media);
+    title.innerText = project.title;
+    description.innerText = project.description;
+    liveLinkBtn.innerText = "View Project";
+    srcCodeBtn.innerText = "Source Code";
+    for(stack of project.techStack) {
+        let li = document.createElement("li");
+        li.innerText = stack;
+        techStackContainer.appendChild(li);
+    }
+
+    leftContainer.appendChild(media);
+    rightContainer.appendChild(title);
+    rightContainer.appendChild(description);
+    rightContainer.appendChild(techStackContainer);
+    if(project.liveLink) {
+        liveLinkBtn.setAttribute("href", project.liveLink);
+        liveLinkBtn.setAttribute("target", "_blank");
+        rightContainer.append(liveLinkBtn);
+    }
+    if(project.srcCodeLink) {
+        srcCodeBtn.setAttribute("href", project.srcCodeLink);
+        srcCodeBtn.setAttribute("target", "_blank");
+        rightContainer.append(srcCodeBtn);
+    }
+
+    container.append(leftContainer);
+    container.append(rightContainer);
+
+    return container;
+
+}
+
 function initViewSwitch() {
 
     lastSelectedMenuItem = document.querySelector("nav > ul > li:first-child > label");
@@ -71,9 +127,21 @@ function initMobileMenu() {
 
 }
 
+function initWorkView() {
+
+    let w1 = new Project("Project 1", "some description", ["Java", "JSP"], "https://hello.com", "https://c.com", "https://picsum.photos/256/128");
+    let p = getProjectItem(w1);
+    document.querySelector("#work > div").appendChild(p);
+    document.querySelector("#work > div").appendChild(getProjectItem(w1));
+    document.querySelector("#work > div").appendChild(getProjectItem(w1));
+    document.querySelector("#work > div").appendChild(getProjectItem(w1));
+
+}
+
 let setTheme = (name) => {document.querySelector("body").className = THEME[name];}
 
 window.onload = () => {
     initViewSwitch();
     initMobileMenu();
+    initWorkView();
 }

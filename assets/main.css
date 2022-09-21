@@ -11,14 +11,19 @@
 }
 
 .light-theme {
-    --color-background : rgb(253,253,253);
+    --color-background : rgb(252,252,252);
     --color-text-inverted : rgb(255,255,255);
     --color-text-primary : rgb(0,0,0);
     --color-text-focus : rgb(128,128,128); 
     --color-divider : rgb(211,211,211); 
     --color-menushadow : rgb(33,33,33);
-    --color-menu : rgb(253,253,253);
+    --color-menu : rgb(252,252,252);
     --color-menucontainer: rgba(0,0,0,0.4);
+    --color-cardbg : rgb(255,255,255);
+    --color-card-labelbg : rgb(175,82,222);
+    --color-card-linkbg : rgb(0, 122, 255);
+    
+    --card-borderadius : 4px;
 
     --icon-home : url("icons/home.svg");
     --icon-work : url("icons/briefcase.svg");
@@ -40,6 +45,11 @@
     --color-menushadow : rgb(33,33,33);
     --color-menu : rgb(28,28,28);
     --color-menucontainer: rgba(0,0,0,0.4);
+    --color-cardbg : rgb(28,28,28);
+    --color-card-labelbg : rgb(191,90,242);
+    --color-card-linkbg : rgb(10, 132, 255);
+
+    --card-borderadius : 4px;
 
     --icon-home : url("icons/home-dark.svg");
     --icon-work : url("icons/briefcase-dark.svg");
@@ -62,6 +72,11 @@
     --color-menushadow : rgb(33,33,33);
     --color-menu : #000084;
     --color-menucontainer: rgba(0,0,0,0.4);
+    --color-cardbg : #bbb;
+    --color-card-labelbg : rgb(0, 255, 0);
+    --color-card-linkbg : rgb(255, 0, 255);
+
+    --card-borderadius : 0;
 
     --icon-home : url("icons/home-dark.svg");
     --icon-work : url("icons/briefcase-dark.svg");
@@ -87,11 +102,23 @@
     }
 
     nav {
-        padding: 12px 0;
+        padding: 18px 0;
     }
 
     nav > ul {
         display: none;
+    }
+
+    .project-container {
+        flex-flow: column nowrap;
+    }
+
+    .project-container > section:first-child {
+        width: 100%;
+    }
+
+    .project-container > section:last-child {
+        width: 100%;
     }
 
 
@@ -113,6 +140,18 @@
 
     nav > ul {
         display: none;
+    }
+
+    .project-container {
+        flex-flow: column nowrap;
+    }
+
+    .project-container > section:first-child {
+        width: 100%;
+    }
+
+    .project-container > section:last-child {
+        width: 100%;
     }
 
 }
@@ -137,6 +176,18 @@
 
     nav > label:first-child, nav > label:last-child {
         display: none;
+    }
+
+    .project-container {
+        flex-flow: row nowrap;
+    }
+
+    .project-container > section:first-child {
+        width: 20%;
+    }
+
+    .project-container > section:last-child {
+        width: 76%;
     }
 
 }
@@ -289,4 +340,71 @@ nav label.selected {
 
 #mobile-menu-container ul li:nth-child(7)::before {
     content: var(--icon-linkedin);
+}
+
+#work {
+    flex: 1;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#work h1 {
+    margin: 36px 0;
+}
+
+#work > div {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+#work > div::-webkit-scrollbar {
+    display: none;
+}
+
+.project-container {
+    padding: 24px;
+    box-sizing: border-box;
+    background: var(--color-cardbg);
+    border-radius: var(--card-borderadius);
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 24px;
+}
+
+.project-container > section:first-child > img {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.project-container h2, p, ul {
+    margin: 0;
+    margin-bottom: 24px;
+}
+
+.project-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-container li {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 4px 8px;
+    background-color: var(--color-card-labelbg);
+    color: var(--color-text-primary);
+    font-size: 14px;
+    border-radius: var(--card-borderadius);
+}
+
+.project-container a {
+    display: inline-block;
+    margin-right: 8px;
+    background-color: var(--color-card-linkbg);
+    padding: 4px 8px;
+    color: var(--color-text-primary);
+    border-radius: var(--card-borderadius);
 }
