@@ -410,3 +410,13 @@ nav label.selected {
     color: var(--color-text-primary);
     border-radius: var(--card-borderadius);
 }
+
+body > h5 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px;
+    margin: 0;
+    color: red;
+    background: repeating-linear-gradient(45deg, rgb(246,190,0), rgb(246,190,0) 10px, black 10px, black 20px);
+}

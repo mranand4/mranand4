@@ -7,16 +7,7 @@ const THEME = {
 let lastVisibleViewId = "home";
 let lastSelectedMenuItem;
 
-function Project(title, description, techStack, liveLink, srcCodeLink, media) {
-    this.title = title;
-    this.description = description;
-    this.techStack = techStack;
-    this.liveLink = liveLink;
-    this.srcCodeLink = srcCodeLink;
-    this.media = media;
-}
-
-function getProjectItem(project) {
+function getProjectItem(titleTxt, descriptionTxt, techStack, liveLink, srcCodeLink, mediaLink) {
 
     let container = document.createElement("div");
     let leftContainer = document.createElement("section");
@@ -30,12 +21,12 @@ function getProjectItem(project) {
 
     container.className = "project-container";
 
-    media.setAttribute("src", project.media);
-    title.innerText = project.title;
-    description.innerText = project.description;
+    media.setAttribute("src", mediaLink);
+    title.innerText = titleTxt;
+    description.innerText = descriptionTxt;
     liveLinkBtn.innerText = "View Project";
     srcCodeBtn.innerText = "Source Code";
-    for(stack of project.techStack) {
+    for(stack of techStack) {
         let li = document.createElement("li");
         li.innerText = stack;
         techStackContainer.appendChild(li);
@@ -45,13 +36,13 @@ function getProjectItem(project) {
     rightContainer.appendChild(title);
     rightContainer.appendChild(description);
     rightContainer.appendChild(techStackContainer);
-    if(project.liveLink) {
-        liveLinkBtn.setAttribute("href", project.liveLink);
+    if(liveLink) {
+        liveLinkBtn.setAttribute("href", liveLink);
         liveLinkBtn.setAttribute("target", "_blank");
         rightContainer.append(liveLinkBtn);
     }
-    if(project.srcCodeLink) {
-        srcCodeBtn.setAttribute("href", project.srcCodeLink);
+    if(srcCodeLink) {
+        srcCodeBtn.setAttribute("href", srcCodeLink);
         srcCodeBtn.setAttribute("target", "_blank");
         rightContainer.append(srcCodeBtn);
     }
@@ -129,12 +120,12 @@ function initMobileMenu() {
 
 function initWorkView() {
 
-    let w1 = new Project("Weather App", "Handy weather app. People can see current weather, daily and weekly forecast of any given place. Locations can be saved (or marked as home for quick glance). Dark theme and light theme. Search autocomplete. Temperature conversion.", ["ReactJS", "ExpressJS", "Rest API", "Heroku"], "https://simple-weather-4.herokuapp.com/", "https://github.com/mranand4/reactjs-expressjs-weather-app", "assets/media/weather_app.gif");
-    let p = getProjectItem(w1);
-    document.querySelector("#work > div").appendChild(p);
-    document.querySelector("#work > div").appendChild(getProjectItem(w1));
-    document.querySelector("#work > div").appendChild(getProjectItem(w1));
-    document.querySelector("#work > div").appendChild(getProjectItem(w1));
+    let workView = document.querySelector("#work > div");
+
+    workView.appendChild(getProjectItem("Weather App", "Handy weather app. People can see current weather, daily and weekly forecast of any given place. Locations can be saved (or marked as home for quick glance). Dark theme and light theme. Search autocomplete. Temperature conversion.", ["ReactJS", "ExpressJS", "Rest API", "Heroku"], "https://simple-weather-4.herokuapp.com/", "https://github.com/mranand4/reactjs-expressjs-weather-app", "assets/media/weather_app.gif"));
+    workView.appendChild(getProjectItem("Lingoniq.com", "Solo Venture. Everything have some particular words associated to it. Words which have special meaning in that context. Lingoniq is a website which lists all the lingoes and their meaning belonging to a particular category/context. E.g. lingoes under Mumbai page will be Kaali Peeli, Jhakaas, Gardi etc.", ["NuxtJS/VueJS", "Django/Python", "MySQL", "AWS Lightsail"], "https://web.archive.org/web/20211028115906/https://lingoniq.com/", null, "assets/media/lingoniq.gif"))
+    workView.appendChild(getProjectItem("Personal Blog System", "Designed and developed a simple personal blogging system. Simple CRUD app.", ["Java", "J2EE", "MySQL"], null, "https://github.com/mranand4/Java-EE-Blog-System", "assets/media/lingoniq.gif"))
+    workView.appendChild(getProjectItem("News App", "Simple news app. Headlines from around the world are collected (News RSS) and presented in a readable form.", ["Java", "Android SDK", "SQLite", "Jsoup/WebScrapping"], null, "https://github.com/mranand4/BitpixNews", "assets/media/news_app.gif"))
 
 }
 
